@@ -1,0 +1,113 @@
+# Translation by lurandly
+
+fi:
+  greetings:
+    good_morning: 'Hyvää Huomenta'
+    good_afternoon: 'Hyvää Päivää'
+    good_evening: 'Hyvää Iltaa'
+
+  house_information:
+    title: 'Kodin tiedot'
+    favorites: 'Suosikit'
+    activity: 'Aktiivisuudet (Ovet, ikkunat, liike)'
+
+  motion:
+    title: 'Liike'
+    title_plural: 'Liikkeet'
+
+  light:
+    title_plural: 'Valot'
+
+  door:
+    title: 'Ovi'
+    title_plural: 'Ovet'
+
+  window:
+    title: 'Ikkuna'
+    title_plural: 'Ikkunat'
+
+  climate:
+    title: 'Lämpötila'
+    title_plural: 'Lämpötilat'
+    inside: 'Sisällä'
+    outside: 'Ulkona'
+    idle: 'Odottaa'
+    heating: 'Lämmittää'
+    off_text: 'Kiinni'
+    auto: 'Ohjelma'
+    heat: 'Lämmitä'
+    cool: 'Viilennä'
+    heat_cool: 'Lämmitä/Viilennä'
+    dry: 'Kuivata'
+    fan_only: 'Vain tuuletin'
+    this_room: 'Tämä huone'
+    temperature: 'Lämpötila'
+    humidity: 'Ilmankosteus'
+
+  cover:
+    title_plural: 'Verhot'
+
+  device:
+    title_plural: 'Laitteet'
+
+  safety:
+    title_plural: 'Turvallisuus'
+
+  media_player:
+    title_plural: 'Media soittimet'
+
+  vacuum:
+    title: 'Imuri'
+    title_plural: 'Imurit'
+
+  plant:
+    title_plural: 'Kasvit'
+
+  home:
+    title: 'Kotisivu'
+
+  rooms:
+    title: 'Huoneet'
+
+  all_lights:
+    title: 'Kaikki valot'
+
+  scenes:
+    title: 'Tilanteet'
+    not_defined: 'Tilanteita ei ole määritelty'
+
+  cameras:
+    title: 'Kamerat'
+    not_defined: 'Kameroita ei ole määritelty'
+
+  more_page:
+    title: 'Lisää'
+    house_info: 'Kodin tiedot'
+    house_data: 
+      title: 'Kodin tiedot'
+      all_sensors: 'Kaikki anturit'
+      all_batteries: 'Kaikki paristot'
+      config: 'Asetukset'
+      developer_tools: 'Kehittäjän työkalut'
+    settings:
+      title: 'Teeman asetukset'
+      reload_configuration: 'Lataa teeman asetukset'
+      theme_docs: 'Teeman ohjeet'
+      support_paypal: 'Tue/Lahjoita Paypallilla'
+      buy_coffee: 'Osta minulle kahvi'
+      by: 'Tekijä'
+      version: 'Versio'
+      update_available: 'Päivitys saatavilla!'
+    more_page_addons: 'Lisää lisäosia'
+
+  more_entities:
+    title: 'Lisää olemuksia'
+
+  lock:
+    title_plural: 'Lukot'
+
+  alarm:
+    title: 'Hälytykset'
+
+  weather:
+    title: 'Sää'

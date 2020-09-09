@@ -21,3 +21,5 @@ www/*/
 www/dwains-theme/images/
 packages/*/
 !packages/dwains_theme
+
+/.vs

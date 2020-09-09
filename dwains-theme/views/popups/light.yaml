@@ -26,6 +26,7 @@ service_data:
         persist_features: true
         show_slider_percent: true
         smooth_color_wheel: true
+        consolidate_entities: true
         header: false
         hide_header: true
   deviceID:

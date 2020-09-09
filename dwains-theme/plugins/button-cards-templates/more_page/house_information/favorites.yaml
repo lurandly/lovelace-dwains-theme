@@ -2,7 +2,7 @@ more_page_house_information_favorites:
   show_label: true
   show_state: true
   show_last_changed: true
-  show_icon: true
+  show_icon: true      
   tap_action: 
     action: more-info 
   double_tap_action:

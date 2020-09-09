@@ -774,13 +774,33 @@
               - type: custom:button-card
                 entity: {{ more_entity["entity"] }}
                 template: room_more_entity
-                {% if more_entity["entity"].split('.')[0] in ('switch', 'light') %}
+                {% if more_entity["entity"].split('.')[0] == 'input_select' %}
                 tap_action:
-                    action: toggle
+                  action: more-info
                 hold_action:
-                    action: more-info
+                  action: more-info
+                double_tap_action:
+                  haptic: light
+                  action: call-service
+                  service: input_select.select_next
+                  service_data:
+                    entity_id: {{ more_entity["entity"] }}
+                {% elif more_entity["entity"].split('.')[0] == 'input_number' %}
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+                {% elif more_entity["entity"].split('.')[0] in ('switch', 'light', 'fan', 'input_boolean') %}
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
                 {% else %}
                 tap_action:
+                  !include 
+                    - ../../popups/more-info.yaml
+                    - entity: {{ more_entity["entity"] }}
+                hold_action:
                   !include 
                     - ../../popups/more-info.yaml
                     - entity: {{ more_entity["entity"] }}

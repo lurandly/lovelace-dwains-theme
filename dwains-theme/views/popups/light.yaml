@@ -1,7 +1,6 @@
 # dwains_theme
 
 # Light popup card content
-haptic: heavy
 action: call-service
 service: browser_mod.popup
 service_data:

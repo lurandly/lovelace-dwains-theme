@@ -1,7 +1,6 @@
 # dwains_theme
 
 #More info popup (for simple popups)
-haptic: heavy
 action: call-service
 service: browser_mod.popup
 service_data:

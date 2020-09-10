@@ -73,9 +73,7 @@
                     entity: {{ page_entity["entity"] }}
                     template: person_more_entity
                     tap_action:
-                      !include 
-                        - ../../popups/more-info.yaml
-                        - entity: {{ page_entity["entity"] }}
+                      action: more-info
                   {% endfor %}
               {% endif %}
               {% if person["show_map"] != 'false' %}

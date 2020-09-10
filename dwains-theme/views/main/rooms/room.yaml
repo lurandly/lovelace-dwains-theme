@@ -61,9 +61,7 @@
                     - value: 'on'
                       icon: "{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"
                   tap_action:
-                    !include 
-                      - ../../popups/more-info.yaml
-                      - entity: {{ room["motion"] }}
+                    action: more-info
                   label: >
                     [[[
                       function timeDifference(current, previous) {
@@ -112,9 +110,7 @@
                     - value: 'on'
                       icon: "{{ _d_t_icons.door_open|default('mdi:door-open') }}"
                   tap_action:
-                    !include 
-                      - ../../popups/more-info.yaml
-                      - entity: {{ room["door"] }}
+                    action: more-info
                   {% if room["door"].split('.')[0] == 'binary_sensor' %}
                   # this room has only 1 door
                   name: {{ _d_t_trans.door.title }}
@@ -163,9 +159,7 @@
                     - value: 'on'
                       icon: "{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"
                   tap_action:
-                    !include 
-                      - ../../popups/more-info.yaml
-                      - entity: {{ room["window"] }}
+                    action: more-info
                   {% if room["window"].split('.')[0] == 'binary_sensor' or room["window"].split('.')[0] == 'sensor' %}
                   # this room has only 1 window
                   name: {{ _d_t_trans.window.title }}
@@ -232,9 +226,7 @@
                 tap_action:
                   action: toggle
                 hold_action:
-                  !include 
-                    - ../../popups/more-info.yaml
-                    - entity: {{ room["lock"] }}
+                  action: more-info
                 label: >
                   [[[ 
                     if(entity){
@@ -571,13 +563,9 @@
                   action: toggle
                   haptic: light 
                 hold_action:
-                  !include
-                    - ../../popups/more-info.yaml
-                    - entity: {{ room["device"] }}
+                  action: more-info
                 double_tap_action:
-                  !include
-                    - ../../popups/more-info.yaml
-                    - entity: {{ room["device"] }}
+                  action: more-info
                 label: >
                   [[[ 
                     if(entity){
@@ -694,9 +682,7 @@
                 {% if room["plant"].split('.')[0] == 'plant' %}
                 # this room has only 1 plant
                 tap_action:
-                  !include 
-                    - ../../popups/more-info.yaml
-                    - entity: {{ room["plant"] }}
+                  action: more-info
                 label: >
                   [[[ 
                     if(entity){
@@ -797,13 +783,9 @@
                   action: more-info
                 {% else %}
                 tap_action:
-                  !include 
-                    - ../../popups/more-info.yaml
-                    - entity: {{ more_entity["entity"] }}
+                  action: more-info
                 hold_action:
-                  !include 
-                    - ../../popups/more-info.yaml
-                    - entity: {{ more_entity["entity"] }}
+                  action: more-info
                 {% endif %}
               {% endfor %}
               {% endif %}

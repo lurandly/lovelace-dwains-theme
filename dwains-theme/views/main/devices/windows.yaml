@@ -49,9 +49,7 @@
                           template: room_window
                           entity: {{ room["window"] }}
                           tap_action:
-                            !include 
-                              - ../../popups/more-info.yaml
-                              - entity: {{ room["window"] }}
+                            action: more-info
                   {% else %}
                   # this room has group of windows
                   - type: custom:auto-entities
@@ -62,9 +60,7 @@
                             type: custom:button-card
                             template: room_window
                             tap_action:
-                              !include 
-                                - ../../popups/more-info.yaml
-                                - entity: this.entity_id
+                              action: more-info
                     sort:
                       method: name
                       ignore_case: true

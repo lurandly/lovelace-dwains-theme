@@ -60,9 +60,7 @@
                             type: custom:button-card
                             template: room_door
                             tap_action:
-                              !include 
-                                - ../../popups/more-info.yaml
-                                - entity: this.entity_id
+                              action: more-info
                     sort:
                       method: name
                       ignore_case: true

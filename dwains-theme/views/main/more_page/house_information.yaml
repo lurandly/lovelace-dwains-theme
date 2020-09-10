@@ -61,13 +61,9 @@
                       action: more-info
                     {% else %}
                     tap_action:
-                     !include 
-                        - ../../popups/more-info.yaml
-                        - entity: {{ favorite["entity"] }}
+                     action: more-info
                     hold_action:
-                      !include 
-                        - ../../popups/more-info.yaml
-                        - entity: {{ favorite["entity"] }}
+                      action: more-info
                     {% endif %}
                     #there is a type defined so  lets change some styling and options
                     state:

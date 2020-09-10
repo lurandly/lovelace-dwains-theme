@@ -48,9 +48,7 @@
                           return "{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}";
                       ]]]
                     tap_action:
-                      !include 
-                        - ../../../popups/more-info.yaml
-                        - entity: this.entity_id
+                      action: more-info
             sort:
               method: name
               ignore_case: true

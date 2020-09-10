@@ -57,13 +57,9 @@
                   action: more-info
                 {% else %}
                 tap_action:
-                  !include 
-                    - ../../../popups/more-info.yaml
-                    - entity: {{ more_entity["entity"] }}
+                  action: more-info
                 hold_action:
-                  !include 
-                    - ../../../popups/more-info.yaml
-                    - entity: {{ more_entity["entity"] }}
+                  action: more-info
                 {% endif %}
               {% endfor %}
 {% endif %}

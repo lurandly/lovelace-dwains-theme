@@ -72,9 +72,7 @@
                           template: room_climate
                           entity: {{ room["temperature"] }}
                           tap_action:
-                            !include 
-                              - ../../popups/more-info.yaml
-                              - entity: {{ room["temperature"] }}
+                            action: more-info
                   {% endif %}
 
               {% endif %}

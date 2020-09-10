@@ -37,10 +37,7 @@
                     type: custom:button-card
                     template: room_plant
                     tap_action:
-                      !include 
-                        - ../../../popups/more-info.yaml
-                        - entity: this.entity_id
-            sort:
+                      action: more-info
               method: name
               ignore_case: true
             card:

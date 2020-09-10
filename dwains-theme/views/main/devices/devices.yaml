@@ -53,13 +53,9 @@
                             action: toggle
                             haptic: light
                           hold_action:
-                            !include
-                            - ../../popups/more-info.yaml
-                            - entity: {{ room["device"] }}
+                            action: more-info
                           double_tap_action:
-                            !include
-                            - ../../popups/more-info.yaml
-                            - entity: {{ room["device"] }}
+                            action: more-info
                   {% else %}
                   # this room has group of devices
                   - type: custom:auto-entities
@@ -73,13 +69,9 @@
                               action: toggle
                               haptic: light
                             hold_action:
-                              !include
-                              - ../../popups/more-info.yaml
-                              - entity: this.entity_id
+                              action: more-info
                             double_tap_action:
-                              !include
-                              - ../../popups/more-info.yaml
-                              - entity: this.entity_id
+                              action: more-info
                     sort:
                       method: name
                       ignore_case: true

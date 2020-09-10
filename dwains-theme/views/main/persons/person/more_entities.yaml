@@ -35,9 +35,7 @@
                 entity: {{ more_entity["entity"] }}
                 template: room_more_entity
                 tap_action:
-                  !include 
-                    - ../../../popups/more-info.yaml
-                    - entity: {{ more_entity["entity"] }}
+                  action: more-info
               {% endfor %}
 {% endif %}
 {% endfor %}

@@ -48,7 +48,9 @@
 #   alarm_disarmed: 'mdi:help'
 #   alarm_pending: 'mdi:help'
 #   alarm_armed_away: 'mdi:help'
-#   armed_home: 'mdi:help'
+#   alarm_armed_home: 'mdi:help'
+#   alarm_armed_night: 'mdi:help'
+#   alarm_armed_vacation: 'mdi:help'
 
 #   #More page icons
 #   more_page_house_information: 'mdi:help'

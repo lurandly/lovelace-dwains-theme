@@ -46,3 +46,17 @@ header_alarm:
           - background-color: '#ff5454'
         icon:
           - color: '#fcfcff'
+    - value: armed_night
+      icon: "{{ _d_t_icons.alarm_armed_night|default('mdi:home-lock') }}"
+      styles: 
+        img_cell:
+          - background-color: '#ff5454'
+        icon:
+          - color: '#fcfcff'
+    - value: armed_vacation
+      icon: "{{ _d_t_icons.alarm_armed_vacation|default('mdi:home-lock') }}"
+      styles: 
+        img_cell:
+          - background-color: '#ff5454'
+        icon:
+          - color: '#fcfcff'

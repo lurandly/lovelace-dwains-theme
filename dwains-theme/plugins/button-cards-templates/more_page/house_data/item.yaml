@@ -11,7 +11,7 @@ house_data_item:
       - grid-template-columns: 30% 70%
       - grid-template-rows: min-content
     card:
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - border-radius: 5px
       - margin-bottom: 0px
       - padding-top: 14px
@@ -23,20 +23,20 @@ house_data_item:
       - height: 45px
       - border-radius: 100%
     name:
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
       - justify-self: start
       - font-size: 15px
       - align-self: center
     state:
       - font-size: 13px
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
       - justify-self: start
       - align-selft: left
     label:
       - justify-self: start
       - align-self: left
       - font-size: 13px
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
   tap_action:
     haptic: heavy
     action: more-info

@@ -5,7 +5,7 @@ person_header_more_entities:
   icon: {{ _d_t_icons.person_header_more_entities|default('mdi:arrange-bring-forward') }}
   styles:
     icon:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
     img_cell:
       - display: block
       - justify-self: end

@@ -4,17 +4,17 @@ more_page_main:
     grid:
       - position: relative
     card: 
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - padding: 5px
       - color: white
       - border-radius: 4%
     name:
       - font-size: 13px
       - font-weight: bold
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
       - padding-bottom: 5px
     icon:
-      - color: var(--dwains-theme-accent)
+      - color: var(--accent-color)
       - height: 35px
       - width: 35px
     img_cell:

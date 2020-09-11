@@ -40,18 +40,18 @@
                     style: |
                       ha-card {
                         margin: 11px;
-                        background: var(--dwains-theme-primary) !important;
-                        color: var(--dwains-theme-names) !important;
+                        background: var(--card-background-color) !important;
+                        color: var(--primary-text-color) !important;
                       }
                       input[type="range"].range {
-                        background: var(--dwains-theme-background) !important;
+                        background: var(--primary-background-color) !important;
                         border: none !important;
                       }
                       .percentage {
-                        color: var(--dwains-theme-accent) !important;
+                        color: var(--accent-color) !important;
                       }
                       input[type="range"].range::-webkit-slider-thumb {
-                        background: var(--dwains-theme-accent) !important;
+                        background: var(--accent-color) !important;
                       }
                     entity: {{ room["cover"] }}
                   {% else %}
@@ -65,18 +65,18 @@
                             type: custom:dwains-cover-card
                             style: |
                               ha-card {
-                                background: var(--dwains-theme-primary) !important;
-                                color: var(--dwains-theme-names) !important;
+                                background: var(--card-background-color) !important;
+                                color: var(--primary-text-color) !important;
                               }
                               input[type="range"].range {
-                                background: var(--dwains-theme-background) !important;
+                                background: var(--primary-background-color) !important;
                                 border: none !important;
                               }
                               .percentage {
-                                color: var(--dwains-theme-accent) !important;
+                                color: var(--accent-color) !important;
                               }
                               input[type="range"].range::-webkit-slider-thumb {
-                                background: var(--dwains-theme-accent) !important;
+                                background: var(--accent-color) !important;
                               }
                       exclude:
                         - state: unavailable

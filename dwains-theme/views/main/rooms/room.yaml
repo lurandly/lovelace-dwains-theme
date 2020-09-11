@@ -42,7 +42,7 @@
           - type: custom:mod-card
             style: |
               ha-card {
-                background-color: var(--dwains-theme-header-background);
+                background-color: var(--card-background-color);
                 margin-top: -20px;
                 padding: 0px;
               }

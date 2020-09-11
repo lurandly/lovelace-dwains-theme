@@ -2,7 +2,7 @@ lights_header_all_lights_toggle:
   size: 30px
   styles:
     icon:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
       - height: 30px
       - width: 30px
     img_cell:

@@ -6,12 +6,12 @@ room_climate_hvac:
       - padding-bottom: 0px
     img_cell:
       - background: transparent
-      - border: '1px solid var(--dwains-theme-grey)'
+      - border: '1px solid var(--secondary-text-color)'
       - border-radius: 5px
       - width: 50px
       - height: 50px
     icon:
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
     name: 
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
       - font-size: 12px

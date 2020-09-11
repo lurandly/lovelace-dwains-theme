@@ -231,7 +231,7 @@ class DwainsWeatherCard extends LitElement {
     return css`
       ha-card {
         box-shadow: none;
-        color: var(--text-primary-color);
+        color: var(--primary-text-color);
         background: #1d1d1d;
         border-radius: 20px;
         padding: 4px;

@@ -14,7 +14,7 @@ persons_person:
       - grid-template-columns: 30% 70%
       - grid-template-rows: min-content min-content min-content
     card:
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - border-radius: 5px
       - overflow: unset
     entity_picture:
@@ -28,12 +28,12 @@ persons_person:
       - justify-self: start
       - font-size: 14px
       - align-self: flex-start
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
     name:
       - justify-self: start
       - font-size: 16px
       - align-self: end
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
     custom_fields:
       graph:
         - overflow: unset

@@ -35,18 +35,18 @@ room_light:
     - value: 'off'
       styles:
         icon:
-          - color: var(--dwains-theme-off)
+          - color: var(--switch-unchecked-button-color)
     - value: 'unavailable'
       styles:
         icon:
-          - color: var(--dwains-theme-unavailable)
+          - color: var(--state-icon-unavailable-color)
   styles:
     grid:
       - grid-template-areas: '"i n""i l"'
       - grid-template-columns: 30% 70%
       - grid-template-rows: min-content
     card:
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - border-radius: 5px
       - margin-bottom: 0px
       - padding-top: 14px
@@ -59,7 +59,7 @@ room_light:
       - height: 45px
       - border-radius: 100%
     name:
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
       - justify-self: start
       - font-size: 15px
       - align-self: center
@@ -67,7 +67,7 @@ room_light:
       - justify-self: start
       - align-self: left
       - font-size: 13px
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
   tap_action:
     action: toggle
     haptic: heavy

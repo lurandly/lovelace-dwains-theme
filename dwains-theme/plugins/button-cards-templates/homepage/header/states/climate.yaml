@@ -50,7 +50,7 @@ header_states_climate:
     img_cell:
       - width: 40px
       - height: 40px
-      - background: var(--dwains-theme-header-button-background)
+      - background: var(--primary-background-color)
       - color: white
       - border-radius: 100%
     card:
@@ -68,11 +68,11 @@ header_states_climate:
             }
           ]]]
     label:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--secondary-text-color)
       - justify-self: center
       - font-size: 11px
       - line-height: 12px
     name:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
       - justify-self: center
       - font-size: 13px

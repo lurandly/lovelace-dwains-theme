@@ -64,7 +64,7 @@
                 style: |
                   ha-card {
                     box-shadow: none;
-                    background: var(--dwains-theme-primary);
+                    background: var(--card-background-color);
                     margin-top: -6px;
                   }
                 entities: 

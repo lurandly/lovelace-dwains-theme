@@ -7,7 +7,7 @@ partials_heading_switch:
       - background: transparent
       - width: 90px
     name:
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-colory)
       - font-weight: bold
       - justify-self: start
       - font-size: 16px

@@ -14,6 +14,11 @@ cards:
     {% if active == heading["name"] %}
     styles:
       name:
-        - color: var(--dwains-theme-accent)
+        - color: var(--accent-color)
+    {% else %}
+    styles:
+      name:
+        - color: var(--secondary-text-color)
     {% endif %}
+
   {% endfor %}

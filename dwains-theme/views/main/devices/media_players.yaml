@@ -49,7 +49,7 @@
                           entity: {{ room["media_player"] }}
                           style: |
                             ha-card div.no-image div.color-block, ha-card div.no-image div.no-img{
-                              background-color: var(--dwains-theme-header-background);
+                              background-color: var(--card-background-color);
                             }
                   {% else %}
                   # this room has group of media players
@@ -61,7 +61,7 @@
                             type: media-control
                             style: |
                               ha-card div.no-image div.color-block, ha-card div.no-image div.no-img{
-                                background-color: var(--dwains-theme-header-background);
+                                background-color: var(--card-background-color);
                               }
                     sort:
                       method: name

@@ -127,12 +127,12 @@
                           - value: '{{ button[0] }}'
                             styles:
                               img_cell:
-                                - background: var(--dwains-theme-accent)
-                                - border: '1px solid var(--dwains-theme-accent)'
+                                - background: var(--accent-color)
+                                - border: '1px solid var(--accent-color)'
                               icon:
                                 - color: '#ffffff'
                               name: 
-                                - color: var(--dwains-theme-names)
+                                - color: var(--primary-text-color)
                       {% endfor %}
               {% elif room["temperature"] %}
               - type: custom:dwains-flexbox-card

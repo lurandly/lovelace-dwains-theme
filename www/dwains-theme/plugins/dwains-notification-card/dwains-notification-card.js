@@ -155,7 +155,7 @@ class DwainsNotificationCard extends LitElement {
     return css`
       ha-card {
         box-shadow: none;
-        color: var(--text-primary-color);
+        color: var(--primary-text-color);
       }
       #title {
         padding-bottom: 3px;

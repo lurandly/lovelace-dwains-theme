@@ -24,7 +24,7 @@
             style: |
               ha-card {
                 padding: 0px;
-                background-color: var(--dwains-theme-header-background);
+                background: var(--card-background-color);
                 --ha-card-background: transparent;
                 border-radius: 0;
                 overflow: hidden;
@@ -74,7 +74,7 @@
                           padding: 0px;
                         }
                         #title {
-                          color: var(--dwains-theme-header-text);
+                          color: var(--primary-text-color);
                           font-size: 22px;
                           font-weight: bold;
                         }                        
@@ -104,10 +104,10 @@
                   {% endif %}
                   style: |
                     ha-card {
-                      background: var(--dwains-theme-header-button-background) !important;
+                      background: var(--primary-background-color) !important;
                     }
                     .variations, .variations ha-icon, #main {
-                      color: var(--dwains-theme-header-button-text) !important;
+                      color: var(--primary-text-color) !important;
                     }
                 {% endif %}
                 #Start header states
@@ -329,14 +329,14 @@
                                 if(states['{{ room["window"] }}']){
                                   {% if room["window"].split('.')[0] == 'binary_sensor' or room["window"].split('.')[0] == 'sensor' %}
                                     if(states['{{ room["window"] }}'].state == 'on' || states['{{ room["window"] }}'].state == 'True'){
-                                      additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"></ha-icon><br>';
+                                      additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"></ha-icon><br>';
                                     }
                                   {% else %}
                                     const entitiesFromGroup = states['{{ room["window"] }}'].attributes['entity_id'];
                                     for (let i = 0; i < entitiesFromGroup.length; i++) {
                                       if(states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'on' || 
                                           states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'True') {
-                                        additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"></ha-icon><br>';
+                                        additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"></ha-icon><br>';
                                         break;
                                       }
                                     }  
@@ -350,14 +350,14 @@
                                 if(states['{{ room["motion"] }}']){
                                   {% if room["motion"].split('.')[0] == 'binary_sensor' or room["motion"].split('.')[0] == 'sensor' %}
                                     if(states['{{ room["motion"] }}'].state == 'on' || states['{{ room["motion"] }}'].state == 'True'){
-                                      additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"></ha-icon><br>';
+                                      additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"></ha-icon><br>';
                                     }
                                   {% else %}
                                     const entitiesFromGroup = states['{{ room["motion"] }}'].attributes['entity_id'];
                                     for (let i = 0; i < entitiesFromGroup.length; i++) {
                                       if(states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'on' ||
                                           states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'True') {
-                                        additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"></ha-icon><br>';
+                                        additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"></ha-icon><br>';
                                         break;
                                       }
                                     }  
@@ -371,14 +371,14 @@
                                 if(states['{{ room["door"] }}']){
                                   {% if room["door"].split('.')[0] == 'binary_sensor' or room["door"].split('.')[0] == 'sensor' %}
                                     if(states['{{ room["door"] }}'].state == 'on' || states['{{ room["door"] }}'].state == 'True'){
-                                      additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.door_open|default('mdi:door-open') }}"></ha-icon><br>';
+                                      additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.door_open|default('mdi:door-open') }}"></ha-icon><br>';
                                     }
                                   {% else %}
                                     const entitiesFromGroup = states['{{ room["door"] }}'].attributes['entity_id'];
                                     for (let i = 0; i < entitiesFromGroup.length; i++) {
                                       if(states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'on' ||
                                           states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'True') {
-                                        additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.door_open|default('mdi:door-open') }}"></ha-icon><br>';
+                                        additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.door_open|default('mdi:door-open') }}"></ha-icon><br>';
                                         break;
                                       }
                                     }  
@@ -392,13 +392,13 @@
                                 if(states['{{ room["lock"] }}']){
                                   {% if room["lock"].split('.')[0] == 'lock' %}
                                     if(states['{{ room["lock"] }}'].state == 'unlocked'){
-                                      additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.window_open|default('mdi:lock-open-variant-outline') }}"></ha-icon><br>';
+                                      additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.window_open|default('mdi:lock-open-variant-outline') }}"></ha-icon><br>';
                                     }
                                   {% elif room["lock"].split('.')[0] == 'group' %}
                                     const entitiesFromGroup = states['{{ room["lock"] }}'].attributes['entity_id'];
                                     for (let i = 0; i < entitiesFromGroup.length; i++) {
                                       if(states[entitiesFromGroup[i]] && states[entitiesFromGroup[i]].state == 'unlocked') {
-                                        additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.window_open|default('mdi:lock-open-variant-outline') }}"></ha-icon><br>';
+                                        additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.window_open|default('mdi:lock-open-variant-outline') }}"></ha-icon><br>';
                                         break;
                                       }
                                     }  
@@ -414,13 +414,13 @@
                                 if(states['{{ room["safety"] }}']){
                                   {% if room["safety"].split('.')[0] != 'group' %}
                                     if(! ok_states.includes( states['{{ room["safety"] }}'].state )){
-                                      additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}"></ha-icon><br>';
+                                      additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}"></ha-icon><br>';
                                     }
                                   {% else %}
                                     const entitiesFromGroup = states['{{ room["safety"] }}'].attributes['entity_id'];
                                     for (let i = 0; i < entitiesFromGroup.length; i++) {
                                       if(states[entitiesFromGroup[i]] && (! ok_states.includes( states[entitiesFromGroup[i]].state ))) {
-                                        additional_info += '<ha-icon style="height: 20px; color: var(--dwains-theme-accent)" icon="{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}"></ha-icon><br>';
+                                        additional_info += '<ha-icon style="height: 20px; color: var(--accent-color)" icon="{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}"></ha-icon><br>';
                                         break;
                                       }
                                     }  
@@ -439,7 +439,7 @@
                               if(entity){
                                 if (entity.state == 'on'){
                                   return `<ha-icon
-                                    style="height: 20px; color: var(--dwains-theme-accent)"
+                                    style="height: 20px; color: var(--accent-color)"
                                     icon="{{ _d_t_icons.light_on|default('mdi:lightbulb') }}">
                                     </ha-icon>`
                                 } else {

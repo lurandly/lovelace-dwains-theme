@@ -35,16 +35,16 @@ header_states_person:
       - border-radius: 100%
       - justify-self: center
     state:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--seondary-text-color)
       - justify-self: center
       - font-size: 11px
       - line-height: 12px
     name:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
       - justify-self: center
       - font-size: 13px
     label:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--seondary-text-color)
       - justify-self: center
       - font-size: 11px
       - line-height: 12px

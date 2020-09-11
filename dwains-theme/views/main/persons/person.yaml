@@ -59,7 +59,7 @@
                       style: |
                         ha-card {
                           box-shadow: none;
-                          background-color: var(--dwains-theme-primary);
+                          background-color: var(--card-background-color);
                         }
                         .content {
                           padding: 10px 0 0 0;

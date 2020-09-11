@@ -49,7 +49,7 @@
                     - color: "{{ scene["icon_color"] }}"
                   {% else %}
                   icon:
-                    - color: "var(--dwains-theme-header-text)"
+                    - color: "var(--primary-text-color)"
                   {% endif %}
                 {% elif scene["entity"].split('.')[0] == 'input_select' %}
                 # its a input_select entity
@@ -72,7 +72,7 @@
                     - color: "{{ scene["icon_color"] }}"
                   {% else %}
                   icon:
-                    - color: 'var(--dwains-theme-header-text)'
+                    - color: 'var(--primary-text-color)'
                   {% endif %}
                   grid:
                     - grid-template-areas: '"i n""i s"'
@@ -92,7 +92,7 @@
                     - color: "{{ scene["icon_color"] }}"
                   {% else %}
                   icon:
-                    - color: 'var(--dwains-theme-header-text)'
+                    - color: 'var(--primary-text-color)'
                   {% endif %}
                   grid:
                     - grid-template-areas: '"i n""i s"'

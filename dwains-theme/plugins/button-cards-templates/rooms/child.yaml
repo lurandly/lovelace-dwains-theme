@@ -10,22 +10,22 @@ rooms_child:
       - grid-template-columns: 20% 30% 1fr
       - grid-template-rows: min-content min-content min-content
     card:
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - border-radius: 5px
       - margin-bottom: 10px
       - padding: 15px 0
     icon:
-      - color: var(--dwains-theme-accent)
+      - color: var(--accent-color)
       - height: 25px
       - width: 25px
     img_cell:
       - width: 45px
       - height: 45px
-      - background: var(--dwains-theme-background)
+      - background: var(--primary-background-color)
       - color: white
       - border-radius: 100%
     name:
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
       - justify-self: start
       - font-size: 16px
       - align-self: center
@@ -33,7 +33,7 @@ rooms_child:
       - justify-self: end
       - align-self: center
       - font-size: 13px
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
       - text-align: right
       - margin-right: 20px
       - text-transform: capitalize

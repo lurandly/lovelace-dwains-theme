@@ -72,7 +72,7 @@ header_weather:
       - grid-template-rows: auto
       - justify-self: center
       - width: auto
-      - background: var(--dwains-theme-header-button-background)
+      - background: var(--primary-background-color)
       - border-radius: 15px
       - padding: 0 10px
     card:
@@ -86,12 +86,12 @@ header_weather:
       - width: 20px
       - height: 20px
     state:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
       - justify-self: start
       - align-self: center
       - font-size: 12px
     name:
-      - color: var(--dwains-theme-header-text)
+      - color: var(--primary-text-color)
       - justify-self: start
       - align-self: center
       - font-size: 12px

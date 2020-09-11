@@ -20,21 +20,21 @@ more_page_house_information_activity:
       - grid-template-columns: 15% 55% 30%
       - grid-template-rows: min-content
     card:
-      - background-color: var(--dwains-theme-primary)
+      - background-color: var(--card-background-color)
       - border-radius: 5px
       - padding-top: 14px
       - padding-bottom: 14px
     icon:
-      - color: var(--dwains-theme-accent)
+      - color: var(--accent-color)
       - width: 55%
     img_cell:
       - width: 35px
       - height: 35px
-      - background: var(--dwains-theme-background)
+      - background: var(--primary-background-color)
       - color: white
       - border-radius: 100%
     name:
-      - color: var(--dwains-theme-names)
+      - color: var(--primary-text-color)
       - justify-self: start
       - font-size: 13px
       - align-self: center
@@ -42,6 +42,6 @@ more_page_house_information_activity:
       - justify-self: end
       - align-self: center
       - font-size: 13px
-      - color: var(--dwains-theme-grey)
+      - color: var(--secondary-text-color)
       - text-align: right
       - margin-right: 20px

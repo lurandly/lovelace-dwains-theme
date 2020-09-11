@@ -42,6 +42,13 @@ header_alarm_large:
           - background-color: '#ffb94f'
         icon:
           - color: '#fcfcff'
+    - value: arming
+      icon: "{{ _d_t_icons.alarm_arming|default('mdi:home-lock') }}"
+      styles:
+        img_cell:
+          - background-color: '#ffb94f'
+        icon:
+          - color: '#fcfcff'
     - value: armed_away
       icon: "{{ _d_t_icons.alarm_armed_away|default('mdi:home-lock') }}"
       styles: 

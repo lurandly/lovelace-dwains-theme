@@ -1,6 +1,6 @@
 # dwains_theme
 
-{% if _d_t_config.global["alarm"] %}
+#{% if _d_t_config.global["alarm"] %}
 - title: {{ _d_t_trans.alarm.title }}
   path: more_page_alarm
   panel: true
@@ -34,4 +34,4 @@
                   - arm_home
                   - arm_away
                   - arm_night
-{% endif %}
+#{% endif %}

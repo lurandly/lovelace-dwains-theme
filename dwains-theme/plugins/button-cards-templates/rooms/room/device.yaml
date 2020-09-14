@@ -39,4 +39,4 @@ room_device:
       - color: var(--secondary-text-color)
   double_tap_action:
     action: toggle
-    haptic: heavy
+    haptic: light

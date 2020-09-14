@@ -1,12 +1,16 @@
 rooms_child:
   layout: icon_name_state2nd
-  show_label: true
+  show_label: false
+  show_state: true
   size: 50%
   tap_action: 
+    haptic: light
     action: more-info 
+  hold_action:
+    action: more-info
   styles:
     grid:
-      - grid-template-areas: '"i n l"'
+      - grid-template-areas: '"i n s"'
       - grid-template-columns: 20% 30% 1fr
       - grid-template-rows: min-content min-content min-content
     card:
@@ -29,7 +33,7 @@ rooms_child:
       - justify-self: start
       - font-size: 16px
       - align-self: center
-    label:
+    state:
       - justify-self: end
       - align-self: center
       - font-size: 13px

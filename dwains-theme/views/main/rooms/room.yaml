@@ -60,46 +60,6 @@
                   state:
                     - value: 'on'
                       icon: "{{ _d_t_icons.motion_on|default('mdi:motion-sensor') }}"
-                  tap_action:
-                    action: more-info
-                  label: >
-                    [[[
-                      function timeDifference(current, previous) {
-                        var msPerMinute = 60 * 1000;
-                        var msPerHour = msPerMinute * 60;
-                        var msPerDay = msPerHour * 24;
-                        var msPerMonth = msPerDay * 30;
-                        var msPerYear = msPerDay * 365;
-
-                        var elapsed = current - previous;
-
-                        if (elapsed < msPerMinute) {
-                            return hass.localize('ui.components.relative_time.past', 'time', hass.localize('ui.duration.second', 'count', Math.round(elapsed/1000)));
-                        }
-                        else if (elapsed < msPerHour) {
-                            return hass.localize('ui.components.relative_time.past', 'time', hass.localize('ui.duration.minute', 'count', Math.round(elapsed/msPerMinute)));
-                        }
-                        else if (elapsed < msPerDay ) {
-                            return hass.localize('ui.components.relative_time.past', 'time', hass.localize('ui.duration.hour', 'count', Math.round(elapsed/msPerHour)));
-                        }
-                        else if (elapsed < msPerMonth) {
-                            return hass.localize('ui.components.relative_time.past', 'time', hass.localize('ui.duration.day', 'count', Math.round(elapsed/elapsed/msPerDay)));
-                        }
-                        else {
-                            return hass.localize('ui.components.relative_time.past', 'time', hass.localize('ui.duration.day', 'count', Math.round(elapsed/elapsed/msPerDay)));
-                        }
-                      }
-                      if(entity){
-                        if(entity.state == 'on' || entity.state == 'True'){
-                          return hass.localize('component.binary_sensor.state.motion.on');
-                        } else {
-                          return timeDifference(new Date(), new Date(entity.last_changed));
-                        }
-                      } else {
-                        console.log("Invalid rooms.yaml:{{ room["name"] }}.motion entity!");
-                        return 'Entity error!'
-                      }
-                    ]]]
                 {% endif %}
                 {% if room["door"] %}
                 - type: custom:button-card
@@ -109,30 +69,13 @@
                   state:
                     - value: 'on'
                       icon: "{{ _d_t_icons.door_open|default('mdi:door-open') }}"
-                  tap_action:
-                    action: more-info
                   {% if room["door"].split('.')[0] == 'binary_sensor' %}
                   # this room has only 1 door
                   name: {{ _d_t_trans.door.title }}
-                  label: >
-                    [[[ 
-                      if(entity){
-                        if(entity.state == 'off' || entity.state == 'False'){
-                          return hass.localize('component.binary_sensor.state.door.off');
-                        } else if(entity.state == 'on' || entity.state == 'True') {
-                          return hass.localize('component.binary_sensor.state.door.on');
-                        } else {
-                          return entity.state;
-                        }
-                      } else {
-                        console.log("Invalid rooms.yaml:{{ room["name"] }}.door entity!");
-                        return 'Entity error!'
-                      }
-                    ]]] 
                   {% else %}
                   # this room has group of doors
                   name: {{ _d_t_trans.door.title_plural }}
-                  label: >
+                  state_display: >
                     [[[
                       if(entity){
                         const entitiesFromGroup = states['{{ room["door"] }}'].attributes['entity_id'];
@@ -158,30 +101,13 @@
                   state:
                     - value: 'on'
                       icon: "{{ _d_t_icons.window_open|default('mdi:window-open-variant') }}"
-                  tap_action:
-                    action: more-info
                   {% if room["window"].split('.')[0] == 'binary_sensor' or room["window"].split('.')[0] == 'sensor' %}
                   # this room has only 1 window
                   name: {{ _d_t_trans.window.title }}
-                  label: >
-                    [[[ 
-                      if(entity){
-                        if(entity.state == 'off' || entity.state == 'False'){
-                          return hass.localize('component.binary_sensor.state.window.off');
-                        } else if(entity.state == 'on' || entity.state == 'True') {
-                          return hass.localize('component.binary_sensor.state.window.on');
-                        } else {
-                          return entity.state;
-                        }
-                      } else {
-                        console.log("Invalid rooms.yaml:{{ room["name"] }}.window entity!");
-                        return 'Entity error!'
-                      }
-                    ]]] 
                   {% else %}
                   # this room has group of windows
                   name: {{ _d_t_trans.window.title_plural }}
-                  label: >
+                  state_display: >
                     [[[
                       if(entity){
                         const entitiesFromGroup = states['{{ room["window"] }}'].attributes['entity_id'];
@@ -225,28 +151,13 @@
                 # this room has only 1 lock (lock entity)
                 tap_action:
                   action: toggle
-                hold_action:
-                  action: more-info
-                label: >
-                  [[[ 
-                    if(entity){
-                      if(entity.state == 'locked'){
-                        return hass.localize('component.binary_sensor.state.lock.off');
-                      } else {
-                        return hass.localize('component.binary_sensor.state.lock.on');
-                      }
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.lock entity!");
-                      return 'Entity error!';
-                    }
-                  ]]] 
                 {% elif room["lock"].split('.')[0] == 'group' %}
                 # this room has group of locks
                 name: {{ _d_t_trans.lock.title_plural }}
                 tap_action: 
                   action: navigate
                   navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_locks
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["lock"] }}'].attributes['entity_id'];
@@ -287,7 +198,7 @@
                   !include
                     - ../../popups/light.yaml
                     - entity: {{ room["light"] }}
-                label: >
+                state_display: >
                   [[[ 
                     if(entity){
                       if(entity.state == 'off'){
@@ -313,22 +224,6 @@
                 tap_action:
                   action: toggle
                   haptic: light 
-                label: >
-                  [[[ 
-                    if(entity){
-                      if(entity.state == 'off'){
-                        return hass.localize('component.light.state._.off');
-                      }
-                      else if(entity.state == 'unavailable') {
-                        return hass.localize('state.default.unavailable');
-                      } else {
-                        return hass.localize('component.light.state._.on');
-                      }
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.light entity!");
-                      return 'Entity error!';
-                    }
-                  ]]] 
                 {% else %}
                 # this room has group of lights
                 name: {{ _d_t_trans.light.title_plural }}
@@ -338,7 +233,7 @@
                 double_tap_action:
                   action: toggle
                   haptic: light 
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["light"] }}'].attributes['entity_id'];
@@ -374,10 +269,7 @@
                     else
                       return "{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}";
                   ]]]
-                tap_action:
-                  action: more-info
-                  haptic: light 
-                label: >
+                state_display: >
                   [[[ 
                     if(entity){
                       var name = entity.attributes.friendly_name === undefined
@@ -420,7 +312,7 @@
                     }
                   ]]]
                 name: {{ _d_t_trans.safety.title_plural }}
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["safety"] }}'].attributes['entity_id'];
@@ -459,7 +351,7 @@
                 tap_action: 
                   action: navigate
                   navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_climate
-                label: >
+                state_display: >
                   [[[ 
                     {% if room["temperature"] %}
                       if(states['{{ room["temperature"] }}']){
@@ -513,7 +405,7 @@
                   action: navigate
                   navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_cover
                 {% if room["cover"].split('.')[0] == 'cover' %}
-                label: >
+                state_display: >
                   [[[ 
                     if(entity){
                       if(entity.state == 'open'){
@@ -530,7 +422,7 @@
                   ]]] 
                 {% else %}
                 name: {{ _d_t_trans.cover.title_plural }}
-                label: >
+                state_display: >
                   [[[ 
                     if(entity){
                       const entitiesFromGroup = states['{{ room["cover"] }}'].attributes['entity_id'];
@@ -562,31 +454,10 @@
                 tap_action:
                   action: toggle
                   haptic: light 
-                hold_action:
-                  action: more-info
-                double_tap_action:
-                  action: more-info
-                label: >
-                  [[[ 
-                    if(entity){
-                      var name = entity.attributes.friendly_name === undefined
-                            ? entity.entity_id.split(".")[1].replace(/_/g, " ")
-                            : entity.attributes.friendly_name;
-
-                      if(entity.state == 'off'){
-                        return name + '<br>' + hass.localize('component.switch.state._.off');
-                      } else {
-                        return name + '<br>' + hass.localize('component.switch.state._.on');
-                      }
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.device entity!");
-                      return 'Entity error!';
-                    }
-                  ]]] 
                 {% else %}
                 # this room has group of devices
                 name: {{ _d_t_trans.device.title_plural }}
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["device"] }}'].attributes['entity_id'];
@@ -619,19 +490,10 @@
                 tap_action:
                   action: navigate
                   navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_media_players
-                label: >
-                  [[[ 
-                    if(entity){
-                      return entity.state;
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.media_player entity!");
-                      return 'Entity error!';
-                    }
-                  ]]] 
                 {% else %}
                 # this room has group of media players
                 name: {{ _d_t_trans.media_player.title_plural }}
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["media_player"] }}'].attributes['entity_id'];
@@ -662,15 +524,6 @@
                 tap_action: 
                   action: navigate
                   navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_vacuum
-                label: >
-                  [[[ 
-                    if(entity){
-                      return entity.state;
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.vacuum entity!");
-                      return 'Entity error!';
-                    }
-                  ]]]
               {% endif %}
 
               #Card for plants (dwains-theme/plugins/button-cards-templates/rooms/child.yaml)
@@ -681,21 +534,10 @@
                 icon: "{{ _d_t_icons.plant|default('mdi:flower') }}"
                 {% if room["plant"].split('.')[0] == 'plant' %}
                 # this room has only 1 plant
-                tap_action:
-                  action: more-info
-                label: >
-                  [[[ 
-                    if(entity){
-                      return entity.state;
-                    } else {
-                      console.log("Invalid rooms.yaml:{{ room["name"] }}.plant entity!");
-                      return 'Entity error!';
-                    }
-                  ]]] 
                 {% else %}
                 # this room has group of plants
                 name: {{ _d_t_trans.plant.title_plural }}
-                label: >
+                state_display: >
                   [[[
                     if(entity){
                       const entitiesFromGroup = states['{{ room["plant"] }}'].attributes['entity_id'];
@@ -761,31 +603,15 @@
                 entity: {{ more_entity["entity"] }}
                 template: room_more_entity
                 {% if more_entity["entity"].split('.')[0] == 'input_select' %}
-                tap_action:
-                  action: more-info
-                hold_action:
-                  action: more-info
                 double_tap_action:
                   haptic: light
                   action: call-service
                   service: input_select.select_next
                   service_data:
                     entity_id: {{ more_entity["entity"] }}
-                {% elif more_entity["entity"].split('.')[0] == 'input_number' %}
-                tap_action:
-                  action: more-info
-                hold_action:
-                  action: more-info
                 {% elif more_entity["entity"].split('.')[0] in ('switch', 'light', 'fan', 'input_boolean') %}
                 tap_action:
                   action: toggle
-                hold_action:
-                  action: more-info
-                {% else %}
-                tap_action:
-                  action: more-info
-                hold_action:
-                  action: more-info
                 {% endif %}
               {% endfor %}
               {% endif %}

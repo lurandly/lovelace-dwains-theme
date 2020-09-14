@@ -28,7 +28,7 @@ persons_person:
       - justify-self: start
       - font-size: 14px
       - align-self: flex-start
-      - color: var(--primary-text-color)
+      - color: var(--secondary-text-color)
     name:
       - justify-self: start
       - font-size: 16px

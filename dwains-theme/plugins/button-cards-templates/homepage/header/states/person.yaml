@@ -35,7 +35,7 @@ header_states_person:
       - border-radius: 100%
       - justify-self: center
     state:
-      - color: var(--seondary-text-color)
+      - color: var(--secondary-text-color)
       - justify-self: center
       - font-size: 11px
       - line-height: 12px
@@ -44,7 +44,7 @@ header_states_person:
       - justify-self: center
       - font-size: 13px
     label:
-      - color: var(--seondary-text-color)
+      - color: var(--secondary-text-color)
       - justify-self: center
       - font-size: 11px
       - line-height: 12px

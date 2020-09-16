@@ -14,6 +14,7 @@ fi:
   motion:
     title: 'Liike'
     title_plural: 'Liikkeet'
+    illuminance: 'Valoisuus'
 
   light:
     title_plural: 'Valot'

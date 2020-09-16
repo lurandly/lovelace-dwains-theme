@@ -30,6 +30,11 @@
             cards:
               - type: alarm-panel
                 entity: {{ _d_t_config.global["alarm"] }}
+                style:
+                  .: |
+                    ha-card {
+                      --mdc-theme-primary: var(--secondary-text-color);
+                    }
                 states:
                   - arm_home
                   - arm_away

@@ -443,6 +443,36 @@
                 {% endif %}
               {% endif %}
 
+              {% if room["devices"] %}
+              {% for device in room["devices"] %}
+              - type: custom:button-card
+                template: rooms_child
+                {% if device["sensor"] %}
+                styles:
+                  grid:
+                    - grid-template-areas: '"i n s" "i n s" "i n l"'
+                {% endif %}
+                name: {{ device["name"] }}
+                icon: "{{ device['icon']|default('mdi:power-plug') }}"
+                entity: {{ device["entity"] }}
+                label: >
+                  [[[
+                    if( states['{{ device["sensor"] }}'].state ){
+                      return states['{{ device["sensor"] }}'].state + ' ' + states['{{ device["sensor"] }}'].attributes.unit_of_measurement;
+                    } else {
+                      return '';
+                    }
+                  ]]] 
+                tap_action:
+                  action: "{{ device['tap_action']|default('toggle') }}"
+                  haptic: light 
+                  navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_device_{{ device["name"]|lower|replace("'", "_")|replace(" ", "_") }}
+                double_tap_action:
+                  haptic: light
+                  action: toggle
+              {% endfor %}
+              {% endif %}
+
               #Card for devices (dwains-theme/plugins/button-cards-templates/rooms/child.yaml)
               {% if room["device"] %}
               - type: custom:button-card

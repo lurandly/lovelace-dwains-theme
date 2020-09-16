@@ -474,7 +474,7 @@
                           {% if room["cover"] %}
                               {% set devices.hasCover = true %}
                           {% endif %}
-                          {% if room["device"] %}
+                          {% if room["device"] or room["devices"] %}
                               {% set devices.hasDevice = true %}
                           {% endif %}
                           {% if room["media_player"] %}
@@ -726,6 +726,13 @@
                                     });  
                                   }
                                 {% endif %}
+                              {% endif %}
+                              {% if room["devices"] %}
+                                {% for device in room["devices"] %}
+                                  if(states['{{ device["entity"] }}'] && states['{{ device["entity"] }}'].state == 'on') {
+                                    onDevices++;
+                                  }
+                                {% endfor %}
                               {% endif %}
                             {% endfor %}
 

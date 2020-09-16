@@ -32,6 +32,13 @@ header_states_device:
               }
             {% endif %}
           {% endif %}
+          {% if room["devices"] %}
+            {% for device in room["devices"] %}
+              if(states['{{ device["entity"] }}'] && states['{{ device["entity"] }}'].state == 'on') {
+                onDevices++;
+              }
+            {% endfor %}
+          {% endif %}
         {% endfor %}
 
         return onDevices;

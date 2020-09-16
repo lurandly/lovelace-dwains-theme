@@ -36,7 +36,7 @@ card:
           label: > 
             [[[         
               return `<ha-icon
-                style="height: 30px; width: 30px; color: var(--card-background-color)"
+                style="height: 30px; width: 30px; color: var(--primary-text-color)"
                 icon="{{ _d_t_icons.menu_back|default('mdi:chevron-left') }}">
                 </ha-icon>`
             ]]]

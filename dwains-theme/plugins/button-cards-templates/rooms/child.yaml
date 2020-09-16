@@ -1,6 +1,6 @@
 rooms_child:
   layout: icon_name_state2nd
-  show_label: false
+  show_label: true
   show_state: true
   size: 50%
   tap_action: 
@@ -41,3 +41,10 @@ rooms_child:
       - text-align: right
       - margin-right: 20px
       - text-transform: capitalize
+    label:
+      - justify-self: end
+      - align-self: center
+      - font-size: 13px
+      - color: var(--secondary-text-color)
+      - text-align: right
+      - margin-right: 20px

@@ -53,4 +53,46 @@
               items_classes: 'col-xs-12 col-sm-6 col-md-3 col-lg-3'
           {% endif %}
 {% endif %}
+{% if room["devices"] %}
+{% for device in room["devices"] %}
+{% if device["path"] %}
+- title: {{ device["name"] }}
+  path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}_device_{{ device["name"]|lower|replace("'", "_")|replace(" ", "_") }}
+  panel: true
+  cards:    
+    - type: custom:mod-card
+      style: | 
+        ha-card {
+          max-width: 1465px;
+          padding-bottom: 50px;
+          margin: 0 auto;
+          font-family: "Open Sans", sans-serif !important;
+        }
+      card:
+        type: vertical-stack
+        cards:
+          #Header
+          - !include
+            - ../../../partials/header.yaml
+            - title: {{ device["name"] }}
+              subtitle: {{ room["name"] }}
+              navigation_path: {{ room["name"]|lower|replace("'", "_")|replace(" ", "_") }}  
+          #Start for a custom more page
+          - type: custom:mod-card
+            style: |
+              ha-card {
+                padding: 11px;
+              }
+            card:
+              type: vertical-stack
+              cards:
+                !include 
+                  - ../../../../../{{ device["path"] }}
+                  - name: {{ device["name"] }}
+                    {% if device["data"] %}
+                    data: '{{ device["data"]|tojson }}'
+                    {% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endfor %}

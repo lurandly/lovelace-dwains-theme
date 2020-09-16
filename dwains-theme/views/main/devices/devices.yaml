@@ -29,13 +29,14 @@
             items_classes: 'col-xs-12 col-sm-6 col-md-3 col-lg-3'
             cards:
               {% for room in _d_t_config.rooms %}
-              {% if room["device"] %}
+              {% if room["device"] or room["devices"] %}
               - type: vertical-stack
                 cards:
                   #Heading
                   - !include
                     - ../../partials/heading.yaml
                     - title: {{ room["name"] }}
+                  {% if room["device"] %}
                   {% if room["device"].split('.')[0] != 'group' %}
                   # this room has only 1 device
                   - type: custom:mod-card
@@ -78,6 +79,25 @@
                     card:
                       type: custom:dwains-flexbox-card
                       items_classes: 'col-xs-12 col-sm-12 col-md-12 col-lg-12'
+                  {% endif %}
+                  {% endif %}
+                  {% if room["devices"] %}
+                  {% for device in room["devices"] %}
+                  - type: custom:mod-card
+                    card:
+                      type: horizontal-stack
+                      cards:
+                        - type: custom:button-card
+                          template: room_device
+                          entity: {{ device["entity"] }}
+                          tap_action:
+                            action: toggle
+                            haptic: light
+                          hold_action:
+                            action: more-info
+                          double_tap_action:
+                            action: more-info
+                  {% endfor %}
                   {% endif %}
               {% endif %}
               {% endfor %}

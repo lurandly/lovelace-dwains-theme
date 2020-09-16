@@ -127,8 +127,8 @@
                           - value: '{{ button[0] }}'
                             styles:
                               img_cell:
-                                - background: var(--accent-color)
-                                - border: '1px solid var(--accent-color)'
+                                - background: var(--primary-color)
+                                - border: '1px solid var(--primary-color)'
                               icon:
                                 - color: '#ffffff'
                               name: 
@@ -153,7 +153,14 @@
                     template: room_climate_info
                     entity: {{ room["pressure"] }}
                   {% endif %}
+                  {% if room["airquality"] %}
+                  - type: custom:button-card
+                    item_classes: 'col-xs-12'
+                    template: room_climate_info
+                    entity: {{ room["airquality"] }}
+                  {% endif %}
               {% endif %}
+
 
               #Start of graphs
               - type: custom:dwains-flexbox-card
@@ -164,7 +171,8 @@
                   {% if 
                         room["temperature"] or 
                         room["humidity"] or
-                        room["pressure"]
+                        room["pressure"] or
+                        room["airquality"]
                   %}
                   - type: vertical-stack
                     cards:
@@ -187,6 +195,11 @@
                       {% if room["pressure"] %}
                       - type: sensor
                         entity: {{ room["pressure"] }}
+                        graph: line
+                      {% endif %}
+                      {% if room["airquality"] %}
+                      - type: sensor
+                        entity: {{ room["airquality"] }}
                         graph: line
                       {% endif %}
                   {% endif %}

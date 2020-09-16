@@ -11,7 +11,7 @@ rooms_child:
   styles:
     grid:
       - grid-template-areas: '"i n s"'
-      - grid-template-columns: 20% 30% 1fr
+      - grid-template-columns: 20% 60% 1fr
       - grid-template-rows: min-content min-content min-content
     card:
       - background-color: var(--card-background-color)
@@ -19,7 +19,7 @@ rooms_child:
       - margin-bottom: 10px
       - padding: 15px 0
     icon:
-      - color: var(--accent-color)
+      - color: var(--primary-color)
       - height: 25px
       - width: 25px
     img_cell:

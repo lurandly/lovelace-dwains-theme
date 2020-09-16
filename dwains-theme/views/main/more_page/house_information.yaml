@@ -44,10 +44,6 @@
                     entity: {{ favorite["entity"] }}
                     template: more_page_house_information_favorites
                     {% if favorite["entity"].split('.')[0] == 'input_select' %}
-                    tap_action:
-                      action: more-info
-                    hold_action:
-                      action: more-info
                     double_tap_action:
                       haptic: light
                       action: call-service
@@ -57,24 +53,8 @@
                     {% elif favorite["entity"].split('.')[0] in ('switch', 'light', 'fan', 'input_boolean') %}
                     tap_action:
                       action: toggle
-                    hold_action:
-                      action: more-info
-                    {% else %}
-                    tap_action:
-                     action: more-info
-                    hold_action:
-                      action: more-info
                     {% endif %}
                     #there is a type defined so  lets change some styling and options
-                    state:
-                      {% if favorite['icon_off'] %}
-                      - value: 'off'
-                        icon: "{{ favorite['icon_off'] }}"
-                      {% endif %}
-                      {% if favorite['icon_on'] %}
-                      - value: 'on'
-                        icon: "{{ favorite['icon_on'] }}"
-                      {% endif %}
                   {% endfor %}
               {% endif %}
 

@@ -15,7 +15,7 @@ person_more_entity:
       - padding-top: 14px
       - padding-bottom: 14px
     icon:
-      - color: var(--accent-color)
+      - color: var(--primary-color)
     img_cell:
       - width: 45px
       - height: 45px

@@ -48,10 +48,10 @@
                         border: none !important;
                       }
                       .percentage {
-                        color: var(--accent-color) !important;
+                        color: var(--primary-color) !important;
                       }
                       input[type="range"].range::-webkit-slider-thumb {
-                        background: var(--accent-color) !important;
+                        background: var(--primary-color) !important;
                       }
                     entity: {{ room["cover"] }}
                   {% else %}
@@ -73,10 +73,10 @@
                                 border: none !important;
                               }
                               .percentage {
-                                color: var(--accent-color) !important;
+                                color: var(--primary-color) !important;
                               }
                               input[type="range"].range::-webkit-slider-thumb {
-                                background: var(--accent-color) !important;
+                                background: var(--primary-color) !important;
                               }
                       exclude:
                         - state: unavailable

@@ -1,3 +1,5 @@
+# dwains_theme
+
 room_safety:
   show_name: true
   show_icon: true
@@ -39,4 +41,4 @@ room_safety:
       - color: var(--secondary-text-color)
   double_tap_action:
     action: more-info
-    haptic: heavy
+    haptic: light

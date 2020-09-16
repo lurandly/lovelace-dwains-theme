@@ -1,7 +1,7 @@
 # dwains_theme
 
 # popup for lock
-haptic: heavy
+haptic: light
 action: call-service
 service: browser_mod.popup
 service_data:

@@ -39,7 +39,7 @@
                     - title: {{ room["name"] }}
                       type: button
                       entity: {{ room["light"] }}
-                  {% if room["light"].split('.')[0] == 'light' or room["light"].split('.')[0] == 'switch' %}
+                  {% if room["light"].split('.')[0] in ('switch', 'light') %}
                   # this room has only 1 light (light or switch entity)
                   - type: custom:mod-card
                     style: |
@@ -84,7 +84,7 @@
                       ignore_case: true
                     card:
                       type: custom:dwains-flexbox-card
-                      items_classes: 'col-xs-6 col-sm-6 col-md-6 col-lg-6'
+                      items_classes: 'col-xs-12 col-sm-12 col-md-12 col-lg-12'
                   {% endif %}
               {% endif %}
               {% endfor %}

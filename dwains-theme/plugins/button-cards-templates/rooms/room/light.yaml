@@ -6,6 +6,9 @@ room_light:
   show_state: false
   show_label: true
   color: 'auto'
+  tap_action:
+    action: toggle
+    haptic: light
   label: >
     [[[ 
       if (typeof(entity) === 'undefined') {
@@ -68,6 +71,3 @@ room_light:
       - align-self: left
       - font-size: 13px
       - color: var(--secondary-text-color)
-  tap_action:
-    action: toggle
-    haptic: heavy

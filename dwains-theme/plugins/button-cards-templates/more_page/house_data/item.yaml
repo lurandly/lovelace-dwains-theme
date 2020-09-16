@@ -38,5 +38,5 @@ house_data_item:
       - font-size: 13px
       - color: var(--secondary-text-color)
   tap_action:
-    haptic: heavy
+    haptic: light
     action: more-info

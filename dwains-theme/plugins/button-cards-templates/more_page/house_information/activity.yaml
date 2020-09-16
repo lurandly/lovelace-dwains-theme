@@ -25,7 +25,7 @@ more_page_house_information_activity:
       - padding-top: 14px
       - padding-bottom: 14px
     icon:
-      - color: var(--accent-color)
+      - color: var(--primary-color)
       - width: 55%
     img_cell:
       - width: 35px

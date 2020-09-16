@@ -40,4 +40,4 @@ room_lock:
       - color: var(--secondary-text-color)
   tap_action:
     action: toggle
-    haptic: heavy
+    haptic: light

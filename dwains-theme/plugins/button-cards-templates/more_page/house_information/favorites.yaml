@@ -2,12 +2,16 @@ more_page_house_information_favorites:
   show_label: true
   show_state: true
   show_last_changed: true
-  show_icon: true      
-  tap_action: 
-    action: more-info 
+  show_icon: true   
+  color: 'auto'
+  tap_action:
+    haptic: light
+    action: more-info
+  hold_action:
+    action: more-info
   double_tap_action:
+    haptic: light
     action: toggle
-    haptic: light 
   styles:
     grid:
       - grid-template-areas: '"i n" "i s" "i l"'
@@ -34,5 +38,4 @@ more_page_house_information_favorites:
       - color: var(--secondary-text-color)
       - justify-self: start
     icon:
-      - color: var(--accent-color)
       - height: 35px

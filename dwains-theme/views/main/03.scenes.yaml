@@ -34,7 +34,7 @@
                 {% if scene["entity"].split('.')[0] == 'scene' %}
                 # its a scene entity
                 tap_action: 
-                  haptic: heavy
+                  haptic: light
                   action: call-service
                   service: scene.turn_on
                   service_data:
@@ -57,7 +57,7 @@
                 tap_action:
                   action: more-info
                 double_tap_action:
-                  haptic: heavy
+                  haptic: light
                   action: call-service
                   service: input_select.select_next
                   service_data:
@@ -80,7 +80,7 @@
                 # its something else then a scene entity
                 show_state: true
                 tap_action:
-                  haptic: heavy
+                  haptic: light
                   action: toggle
                 styles:
                   {% if scene["background"] %}

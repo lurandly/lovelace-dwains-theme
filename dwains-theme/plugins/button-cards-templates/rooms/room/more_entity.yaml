@@ -11,6 +11,9 @@ room_more_entity:
     action: more-info
   hold_action:
     action: more-info
+  double_tap_action:
+    haptic: light
+    action: toggle
   color: 'auto'
   styles:
     grid:

@@ -47,7 +47,6 @@ header_states_plant:
     grid:
       - grid-template-areas: '"i""n""l"'
     icon:
-      - color: white
       - width: 55%
     img_cell:
       - width: 40px

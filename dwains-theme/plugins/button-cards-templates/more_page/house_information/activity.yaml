@@ -1,4 +1,5 @@
 more_page_house_information_activity:
+  show_state: true
   show_last_changed: false
   show_label: true
   label: >
@@ -16,7 +17,7 @@ more_page_house_information_activity:
     action: more-info 
   styles:
     grid:
-      - grid-template-areas: '"i n l"'
+      - grid-template-areas: '"i n s" "i n l"'
       - grid-template-columns: 15% 55% 30%
       - grid-template-rows: min-content
     card:
@@ -39,6 +40,13 @@ more_page_house_information_activity:
       - font-size: 13px
       - align-self: center
     label:
+      - justify-self: end
+      - align-self: center
+      - font-size: 13px
+      - color: var(--secondary-text-color)
+      - text-align: right
+      - margin-right: 20px
+    state:
       - justify-self: end
       - align-self: center
       - font-size: 13px

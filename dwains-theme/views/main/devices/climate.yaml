@@ -26,7 +26,7 @@
           #Start for room climate content page
           - type: custom:dwains-flexbox-card
             padding: true
-            items_classes: 'col-xs-12 col-sm-6 col-md-3 col-lg-3'
+            items_classes: 'col-xs-12 col-sm-3 col-md-3 col-lg-3'
             cards:
               {% for room in _d_t_config.rooms %}
               {% if room["climate"] or room["temperature"] %}
@@ -59,21 +59,60 @@
                   {% endif %}
                   {% endif %}
 
-                  {% if room["temperature"] %}
-                  - type: custom:mod-card
-                    style: |
-                      ha-card {
-                        padding: 0px;
-                      }
-                    card:
-                      type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          template: room_climate
-                          entity: {{ room["temperature"] }}
-                          tap_action:
-                            action: more-info
+                  {% if 
+                        room["temperature"] or 
+                        room["humidity"] or
+                        room["pressure"] or
+                        room["airquality"]
+                  %}
+                  - type: vertical-stack
+                    cards:
+                      {% if room["temperature"] %}
+                      - type: sensor
+                        entity: {{ room["temperature"] }}
+                        name: {{ _d_t_trans.climate.temperature }}
+                        graph: line
+                      {% endif %}
+                      {% if room["humidity"] %}
+                      - type: sensor
+                        entity: {{ room["humidity"] }}
+                        name: {{ _d_t_trans.climate.humidity }}
+                        graph: line
+                      {% endif %}
+                      {% if room["pressure"] %}
+                      - type: sensor
+                        entity: {{ room["pressure"] }}
+                        graph: line
+                      {% endif %}
+                      {% if room["airquality"] %}
+                      - type: sensor
+                        entity: {{ room["airquality"] }}
+                        graph: line
+                      {% endif %}
                   {% endif %}
 
               {% endif %}
               {% endfor %}
+              {% if 
+                    _d_t_config.global["outside_temperature"] or 
+                    _d_t_config.global["outside_humidity"] 
+              %}
+              - type: vertical-stack
+                cards:
+                  #Heading
+                  - !include
+                    - ../../partials/heading.yaml
+                    - title: {{ _d_t_trans.climate.outside }}
+                  {% if _d_t_config.global["outside_temperature"] %}
+                  - type: sensor
+                    entity: {{ _d_t_config.global["outside_temperature"] }}
+                    name: {{ _d_t_trans.climate.temperature }}
+                    graph: line
+                  {% endif %}
+                  {% if _d_t_config.global["outside_humidity"] %}
+                  - type: sensor
+                    entity: {{ _d_t_config.global["outside_humidity"] }}
+                    name: {{ _d_t_trans.climate.humidity }}
+                    graph: line
+                  {% endif %}      
+              {% endif %}

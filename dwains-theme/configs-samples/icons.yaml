@@ -35,6 +35,8 @@
 #   motion_on: 'mdi:help'
 #   motion_off: 'mdi:help'
 
+#   illuminance: 'mdi:help'
+
 #   cover: 'mdi:help'
 
 #   device: 'mdi:help'

@@ -38,25 +38,25 @@
               navigation_path: home  
           {% endif %}
           #Subheader with room information
-          {% if room["motion"] or room["door"] or room["window"] %}
+          {% if room["motion"] or room["door"] or room["window"] or room["lux"] %}
           - type: custom:mod-card
             style: |
               ha-card {
                 background-color: var(--card-background-color);
                 margin-top: -20px;
-                padding: 0px;
+                padding-left: 15px;
               }
             card:
               type: custom:dwains-flexbox-card
               items_classes: 'col-xs-3 col-sm-3 col-md-3 col-lg-3'
-              padding: true
+              padding: true              
               cards:
                 {% if room["lux"] %}
                 - type: custom:button-card
                   template: rooms_subheader
                   entity: {{ room["lux"] }}
                   name: {{ _d_t_trans.motion.illuminance }}
-                  icon: "{{ _d_t_icons.motion_off|default('mdi:brightness-5') }}"
+                  icon: "{{ _d_t_icons.illuminance|default('mdi:brightness-5') }}"
                   color: var(--dark-primary-color)
                 {% endif %}
                 {% if room["motion"] %}

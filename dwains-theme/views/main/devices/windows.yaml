@@ -46,7 +46,7 @@
                       type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          template: room_window
+                          template: more_page_house_information_activity
                           entity: {{ room["window"] }}
                           tap_action:
                             action: more-info
@@ -58,7 +58,7 @@
                         - group: {{ room["window"] }}
                           options:
                             type: custom:button-card
-                            template: room_window
+                            template: more_page_house_information_activity
                             tap_action:
                               action: more-info
                     sort:

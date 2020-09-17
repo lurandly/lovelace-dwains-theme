@@ -7,6 +7,14 @@ room_device:
   show_label: false
   show_last_changed: true
   color: 'auto'
+  tap_action:
+    haptic: light
+    action: toggle
+  hold_action:
+    action: more-info
+  double_tap_action:
+    haptic: light
+    action: toggle
   styles:
     grid:
       - grid-template-areas: '"i n""i s""i l"'
@@ -39,6 +47,3 @@ room_device:
       - align-self: left
       - font-size: 12px
       - color: var(--secondary-text-color)
-  double_tap_action:
-    action: toggle
-    haptic: light

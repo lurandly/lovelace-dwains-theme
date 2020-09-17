@@ -48,15 +48,8 @@
                       type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          template: room_device
+                          template: rooms_child
                           entity: {{ room["device"] }}
-                          tap_action:
-                            action: toggle
-                            haptic: light
-                          hold_action:
-                            action: more-info
-                          double_tap_action:
-                            action: more-info
                   {% else %}
                   # this room has group of devices
                   - type: custom:auto-entities
@@ -65,14 +58,7 @@
                         - group: {{ room["device"] }}
                           options:
                             type: custom:button-card
-                            template: room_device
-                            tap_action:
-                              action: toggle
-                              haptic: light
-                            hold_action:
-                              action: more-info
-                            double_tap_action:
-                              action: more-info
+                            template: rooms_child
                     sort:
                       method: name
                       ignore_case: true
@@ -83,21 +69,73 @@
                   {% endif %}
                   {% if room["devices"] %}
                   {% for device in room["devices"] %}
-                  - type: custom:mod-card
-                    card:
-                      type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          template: room_device
-                          entity: {{ device["entity"] }}
-                          tap_action:
-                            action: toggle
-                            haptic: light
-                          hold_action:
-                            action: more-info
-                          double_tap_action:
-                            action: more-info
+                  - type: custom:button-card
+                    template: rooms_child
+                    {% if device["sensor"] %}
+                    styles:
+                      grid:
+                        - grid-template-areas: '"i n s" "i n l"'
+                    label: >
+                      [[[
+                        if( '{{ device["sensor"] }}' ){
+                          return states['{{ device["sensor"] }}'].state + ' ' + states['{{ device["sensor"] }}'].attributes.unit_of_measurement;
+                        } else {
+                          return '';
+                        }
+                      ]]] 
+                    {% endif %}
+                    name: {{ device["name"] }}
+                    icon: "{{ device['icon']|default('mdi:power-plug') }}"
+                    entity: {{ device["entity"] }}
+                    tap_action:
+                      action: "{{ device['tap_action']|default('toggle') }}"
+                      haptic: light 
+                      navigation_path: home_device_{{ device["name"]|lower|replace("'", "_")|replace(" ", "_") }}
                   {% endfor %}
                   {% endif %}
               {% endif %}
               {% endfor %}
+{% for room in _d_t_config.rooms %}
+{% if room["devices"] %}
+{% for device in room["devices"] %}
+{% if device["path"] %}
+- title: {{ device["name"] }}
+  path: home_device_{{ device["name"]|lower|replace("'", "_")|replace(" ", "_") }}
+  panel: true
+  cards:    
+    - type: custom:mod-card
+      style: | 
+        ha-card {
+          max-width: 1465px;
+          padding-bottom: 50px;
+          margin: 0 auto;
+          font-family: "Open Sans", sans-serif !important;
+        }
+      card:
+        type: vertical-stack
+        cards:
+          #Header
+          - !include
+            - ../../partials/header.yaml
+            - title: {{ device["name"] }}
+              subtitle: {{ room["name"] }}
+              navigation_path: devices_devices#devices 
+          #Start for a custom more page
+          - type: custom:mod-card
+            style: |
+              ha-card {
+                padding: 11px;
+              }
+            card:
+              type: vertical-stack
+              cards:
+                !include 
+                  - ../../../../{{ device["path"] }}
+                  - name: {{ device["name"] }}
+                    {% if device["data"] %}
+                    data: '{{ device["data"]|tojson }}'
+                    {% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}

@@ -8,6 +8,9 @@ rooms_child:
     action: more-info 
   hold_action:
     action: more-info
+  double_tap_action: 
+    haptic: light
+    action: toggle
   styles:
     grid:
       - grid-template-areas: '"i n s"'

@@ -38,13 +38,9 @@
                     type: custom:button-card
                     template: room_light
                     hold_action:
-                      !include 
-                        - ../../../popups/light.yaml
-                        - entity: this.entity_id
+                      action: more-info
                     double_tap_action:
-                      !include 
-                        - ../../../popups/light.yaml
-                        - entity: this.entity_id
+                      action: more-info
             sort:
               method: name
               ignore_case: true

@@ -22,9 +22,7 @@ entity: {{ entity }}
 name: {{ title }}
 template: partials_heading
 tap_action:
-  !include 
-    - ../popups/light.yaml
-    - entity: {{ entity }}
+  action: more-info
 double_tap_action:
   action: toggle
 {% endif %}

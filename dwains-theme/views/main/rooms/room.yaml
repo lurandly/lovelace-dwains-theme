@@ -199,13 +199,9 @@
                   action: toggle
                   haptic: light 
                 hold_action:
-                  !include
-                    - ../../popups/light.yaml
-                    - entity: {{ room["light"] }}
+                  action: more-info
                 double_tap_action:
-                  !include
-                    - ../../popups/light.yaml
-                    - entity: {{ room["light"] }}
+                  action: more-info
                 state_display: >
                   [[[ 
                     if(entity){

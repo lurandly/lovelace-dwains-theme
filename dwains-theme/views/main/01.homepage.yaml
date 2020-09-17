@@ -419,7 +419,7 @@
                               if(entity){
                                 if (entity.state == 'on'){
                                   return `<ha-icon
-                                    style="height: 20px; color: var(--accent-color)"
+                                    style="height: 20px; color: var(--primary-color)"
                                     icon="{{ _d_t_icons.light_on|default('mdi:lightbulb') }}">
                                     </ha-icon>`
                                 } else {

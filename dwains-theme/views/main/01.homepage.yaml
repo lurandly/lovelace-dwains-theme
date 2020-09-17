@@ -582,7 +582,7 @@
                         name: {{ _d_t_trans.light.title_plural }}
                         tap_action: 
                           action: navigate
-                          navigation_path: devices_lights#devices
+                          navigation_path: lights
                         label: >
                           [[[
                             var onLights = 0;

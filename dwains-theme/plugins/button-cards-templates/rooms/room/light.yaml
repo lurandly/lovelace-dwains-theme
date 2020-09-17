@@ -36,6 +36,7 @@ room_light:
     ]]]
   state:
     - value: 'off'
+      icon: mdi:lightbulb-outline
       styles:
         icon:
           - color: var(--switch-unchecked-button-color)

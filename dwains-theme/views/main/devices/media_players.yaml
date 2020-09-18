@@ -1,6 +1,5 @@
 # dwains_theme
 
-#House all media players
 - title: {{ _d_t_trans.media_player.title_plural }}
   path: devices_media_players
   panel: true
@@ -47,28 +46,36 @@
                       cards:
                         - type: media-control
                           entity: {{ room["media_player"] }}
-                          style: |
-                            ha-card div.no-image div.color-block, ha-card div.no-image div.no-img{
-                              background-color: var(--card-background-color);
-                            }
-                  {% else %}
-                  # this room has group of media players
-                  - type: custom:auto-entities
-                    filter:
-                      include:
-                        - group: {{ room["media_player"] }}
-                          options:
-                            type: media-control
-                            style: |
-                              ha-card div.no-image div.color-block, ha-card div.no-image div.no-img{
-                                background-color: var(--card-background-color);
+                          style: 
+                            .: |
+                              ha-card {
+                                --text-primary-color: var(--primary-text-color);
                               }
-                    sort:
-                      method: name
-                      ignore_case: true
-                    card:
-                      type: custom:dwains-flexbox-card
-                      items_classes: 'col-xs-12'
-                  {% endif %}
+                              ha-card div.no-image div.color-block, ha-card div.no-image div.no-img {
+                                --primary-color: var(--card-background-color);
+                              }
+              {% else %}
+              # this room has group of media_players
+              - type: custom:auto-entities
+                filter:
+                  include:
+                    - group: {{ room["media_player"] }}
+                      options:
+                        type: media-control
+                        style: 
+                          .: |
+                            ha-card {
+                              --text-primary-color: var(--primary-text-color)
+                            }
+                            ha-card div.no-image div.color-block, ha-card div.no-image div.no-img {
+                              --primary-color: var(--card-background-color);
+                            }
+                sort:
+                  method: name
+                  ignore_case: true
+                card:
+                  type: custom:dwains-flexbox-card
+                  items_classes: 'col-xs-12'
               {% endif %}
-              {% endfor %}
+          {% endif %}
+          {% endfor %}

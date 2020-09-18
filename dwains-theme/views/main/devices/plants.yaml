@@ -48,8 +48,6 @@
                         - type: custom:button-card
                           template: room_plant
                           entity: {{ room["plant"] }}
-                          tap_action:
-                            action: more-info
                   {% else %}
                   # this room has group of plants
                   - type: custom:auto-entities
@@ -59,8 +57,6 @@
                           options:
                             type: custom:button-card
                             template: room_plant
-                            tap_action:
-                              action: more-info
                     sort:
                       method: name
                       ignore_case: true

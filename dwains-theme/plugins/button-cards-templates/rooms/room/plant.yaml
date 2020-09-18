@@ -6,6 +6,15 @@ room_plant:
   show_state: false
   show_label: true
   color: 'auto'
+  tap_action:
+    action: more-info
+    haptic: light
+  double_tap_action:
+    action: more-info
+    haptic: light
+  hold_action:
+    action: more-info
+    haptic: light
   label: >
     [[[ 
       return entity.state;

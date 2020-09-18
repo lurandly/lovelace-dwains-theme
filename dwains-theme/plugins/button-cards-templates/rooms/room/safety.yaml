@@ -7,6 +7,15 @@ room_safety:
   show_label: false
   show_last_changed: true
   color: 'auto'
+  tap_action:
+    action: more-info
+    haptic: light
+  double_tap_action:
+    action: more-info
+    haptic: light
+  hold_action:
+    action: more-info
+    haptic: light
   styles:
     grid:
       - grid-template-areas: '"i n""i s""i l"'
@@ -39,6 +48,3 @@ room_safety:
       - align-self: left
       - font-size: 12px
       - color: var(--secondary-text-color)
-  double_tap_action:
-    action: more-info
-    haptic: light

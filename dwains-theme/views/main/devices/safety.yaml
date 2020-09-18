@@ -59,8 +59,6 @@
                               else
                                 return "{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}";
                             ]]]
-                          tap_action:
-                            action: more-info
                   {% else %}
                   # this room has group of devices
                   - type: custom:auto-entities
@@ -80,8 +78,6 @@
                                 else
                                   return "{{ _d_t_icons.safety_alert|default('mdi:shield-alert-outline') }}";
                               ]]]
-                            tap_action:
-                              action: more-info
                     sort:
                       method: name
                       ignore_case: true

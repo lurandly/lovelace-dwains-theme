@@ -5,6 +5,11 @@ house_data_item:
   show_label: false
   show_last_changed: true
   color: 'auto'
+  tap_action:
+    haptic: light
+    action: more-info
+  hold_action:
+    action: more-info
   styles:
     grid:
       - grid-template-areas: '"i n""i s""i l"'
@@ -37,6 +42,3 @@ house_data_item:
       - align-self: left
       - font-size: 13px
       - color: var(--secondary-text-color)
-  tap_action:
-    haptic: light
-    action: more-info

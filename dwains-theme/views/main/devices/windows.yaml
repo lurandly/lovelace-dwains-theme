@@ -48,8 +48,6 @@
                         - type: custom:button-card
                           template: more_page_house_information_activity
                           entity: {{ room["window"] }}
-                          tap_action:
-                            action: more-info
                   {% else %}
                   # this room has group of windows
                   - type: custom:auto-entities
@@ -59,8 +57,6 @@
                           options:
                             type: custom:button-card
                             template: more_page_house_information_activity
-                            tap_action:
-                              action: more-info
                     sort:
                       method: name
                       ignore_case: true
